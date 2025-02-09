@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     
 
-    <footer class="bg-[#8CDBE0] shadow-md">
+    <footer class="bg-[#8CDBE0] shadow-md border-t-1">
         <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
         <span class="text-sm sm:text-center">© {new Date().getFullYear()} <a class="hover:underline">Gigsup</a>. All Rights Reserved.
         </span>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const WavyBackground = () => {
     return (
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -68,7 +70,7 @@ const WavyBackground = () => {
   
             <p className="text-center text-sm mt-4">
               Already have an account?{" "}
-              <a className="text-green-700 cursor-pointer underline" href="#">Sign In!</a>
+              <Link className="text-green-700 cursor-pointer underline" to='/login'>Sign In!</Link>
             </p>
           </form>
         </div>

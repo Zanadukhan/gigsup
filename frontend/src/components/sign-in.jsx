@@ -1,3 +1,7 @@
+import { Link } from "react-router-dom";
+
+
+
 const WavyBackground = () => {
     return (
         <div className="min-h-screen w-full relative overflow-hidden">
@@ -79,7 +83,7 @@ const SignIn = () => {
 
                         <p className="text-center text-sm mt-4">
                             Don't have an account?{" "}
-                            <a className="text-green-700 cursor-pointer underline" href="#">Sign Up!</a>
+                            <Link className="text-green-700 cursor-pointer underline" to="/register">Sign Up!</Link>
                         </p>
                         </form>
                     </div>
