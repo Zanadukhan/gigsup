@@ -3,9 +3,9 @@ import {  createBrowserRouter, createRoutesFromElements, RouterProvider, Route }
 import './App.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Content from './components/main-page'
-import SignIn from './components/sign-in'
-import SignUp from './components/sign-up'
+import Content from './pages/main-page'
+import SignIn from './pages/sign-in'
+import SignUp from './pages/sign-up'
 
 const Home = () => {
   return (
