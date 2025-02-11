@@ -2,6 +2,7 @@ import handSqueezeLime from '../assets/hand-squeeze-lime.png'
 import handshake from '../assets/hand-shake.jpeg'
 import caps from '../assets/caps.jpeg'
 import people from '../assets/people.jpeg'
+import { Link } from 'react-router-dom';
 
 const Card = (props) => {
     return (
@@ -29,7 +30,7 @@ const Content = () => {
         <div className='w-2/4'>
          <h1 className="mb-10 text-6xl font-[Climate_Crisis] pt-8 pl-10">Ready to get the juicy goods on your next career path?</h1>
          <p className=" pl-10 w-3/4 text-xl font-normal">Discover your next career move with Gigsup, the AI-powered platform that matches your strengths, interests, and skills with career paths that truly fit you. We provide clear career insights—like roles, skills, compensation, stress levels, and flexibility—so you can save time, avoid unnecessary education costs, and find a job that suits you.</p>
-         <a href="#" className=" mt-6 shadow-xl w-48 px-12 outline block ml-11 mt-6 [#8CDBE0] hover:bg-red-300 py-2 px-4 rounded-full">Register Now</a>
+         <Link to='/register' className=" mt-6 shadow-xl w-48 px-12 outline block ml-11 mt-6 [#8CDBE0] hover:bg-red-300 py-2 px-4 rounded-full">Register Now</Link>
          </div>
          <div className="w-1/3 flex justify-end">
                 <img className="object-none h-full w-100" src={handSqueezeLime} alt="Hand squeezing lime"/>
