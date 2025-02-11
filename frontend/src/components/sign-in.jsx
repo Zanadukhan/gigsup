@@ -37,12 +37,12 @@ const SignIn = () => {
 
                 <div className="w-9/20 h-2/2 bg-white p-10 rounded-r-lg shadow-lg">
                     <div classname="content-center">
-                        <h2 className="text-4xl flex justify-center items-center mr-[100px]">Welcome Back!</h2>
-                        <p className="text-gray-500 mb-6 flex justify-center items-center mr-[125px]">Enter your credentials below</p>
+                        <h2 className="text-4xl flex justify-center items-center lg:mr-[100px]">Welcome Back!</h2>
+                        <p className="text-gray-500 mb-6 flex justify-center items-center lg:mr-[125px]">Enter your credentials below</p>
 
                         <form className="space-y-4" method="post">
                         <div class="flex flex-col items-center">
-                            <label className="block text-sm font-medium mr-[275px]">Email</label>
+                            <label className="block text-sm font-medium lg:mr-[275px]">Email</label>
                             <input
                             type="email"
                             placeholder="email@example.com"
@@ -51,7 +51,7 @@ const SignIn = () => {
                         </div>
 
                         <div className="flex flex-col items-center">
-                        <label className="block text-sm font-medium text-left mr-[255px]">Password</label>
+                        <label className="block text-sm font-medium text-left lg:mr-[255px]">Password</label>
                         <input
                             type="password"
                             placeholder="*******"
@@ -60,7 +60,7 @@ const SignIn = () => {
                         </div>
 
 
-                        <div className="text-right text-m text-gray-500 cursor-pointer mr-[145px]">
+                        <div className="text-right text-m text-gray-500 cursor-pointer lg:mr-[145px]">
                             <a href="#">Forgot Password?</a>
                         </div>
                         <div class="flex flex-col items-center">
