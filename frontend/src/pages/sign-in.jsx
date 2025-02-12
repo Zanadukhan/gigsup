@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 
 
@@ -25,9 +26,61 @@ const WavyBackground = () => {
 </div>
 
     )
-  }
+}
 
 const SignIn = () => {
+    // const [message, setMessage] = useState("");
+    const navigate = useNavigate();
+
+    const [input, setInput] = useState({
+        email: "",
+        password: "",
+    })
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+
+        // Check if both fields have values before making the request
+        if (input.email !== "" && input.password !== "") {
+            try {
+                const response = await fetch("http://127.0.0.1:5000/api/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(input),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    // Store user email info in localStorage for now, so we can check if its working
+                    // a database will be used later, so we won't have to rely on localStorage after
+                    localStorage.setItem("userEmail", input.email); 
+                    console.log("Login successful!");
+
+                    // send us to the dummy page if 200 ok
+                    navigate("/dashboard")
+                } else {
+                    console.log(data.message || "Login failed");
+                }
+            } catch (error) {
+                console.log("Login failed. Please try again.");
+            }
+        } else {
+            console.log("Please provide valid email and password.");
+        }
+    };
+
+    // Handle input changes
+    const handleInput = (e) => {
+        // Deconstruct event object to get 'name' and 'value' of input field
+        const { name, value } = e.target; 
+        setInput((prev) => ({
+            ...prev, // keeps values safe while updating changed field
+            // can update 'email' without affecting 'password', or other way around
+            [name]: value, // updates the field based on its 'name'
+        }));
+    };
+
     return (
         <>
             <div className="flex h-screen items-center justify-center bg-gray-100">
@@ -40,13 +93,16 @@ const SignIn = () => {
                         <h2 className="text-4xl flex justify-center items-center lg:mr-[100px]">Welcome Back!</h2>
                         <p className="text-gray-500 mb-6 flex justify-center items-center lg:mr-[125px]">Enter your credentials below</p>
 
-                        <form className="space-y-4" method="post">
+                        <form className="space-y-4" method="post" onSubmit={handleLogin}>
                         <div class="flex flex-col items-center">
                             <label className="block text-sm font-medium lg:mr-[275px]">Email</label>
                             <input
                             type="email"
                             placeholder="email@example.com"
                             className="w-full border-2 border-black rounded-lg px-4 py-3 mt-1 focus:outline-none focus:ring focus:border-blue-300 sm:w-80"
+                            name="email"
+                            value={input.email}
+                            onChange={handleInput}
                             />
                         </div>
 
@@ -56,6 +112,9 @@ const SignIn = () => {
                             type="password"
                             placeholder="*******"
                             className="w-full border-2 border-black rounded-lg px-4 py-3 mt-1 focus:outline-none focus:ring focus:border-blue-300 sm:w-80"
+                            name="password"
+                            value={input.password}
+                            onChange={handleInput}
                         />
                         </div>
 
