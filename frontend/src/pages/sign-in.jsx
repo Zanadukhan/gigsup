@@ -60,8 +60,8 @@ const SignIn = () => {
                         </div>
 
 
-                        <div className="text-right text-m text-gray-500 cursor-pointer lg:mr-[145px]">
-                            <a href="#">Forgot Password?</a>
+                        <div className="text-gray-500 cursor-pointer flex flex-col items-center lg:ml-[200px]">
+                            <a href="#" classname="">Forgot Password?</a>
                         </div>
                         <div class="flex flex-col items-center">
                             <a href="#">
