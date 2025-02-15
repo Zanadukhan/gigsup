@@ -1,0 +1,7 @@
+version: 1
+datastore:
+  user: ${DB_USER}
+  password: ${DB_PASSWORD}
+  hostname: localhost
+  port: 3307
+  db: ${DB_NAME}

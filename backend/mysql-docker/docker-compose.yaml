@@ -6,4 +6,5 @@ services:
     env_file:
       - .env
     ports:
-      - '3306:3306'
+      - '3307:3306' # can be mapped to any port (I used 3307 because 3306 is already being used)
+      # this maps host 3307 to containers 3306
