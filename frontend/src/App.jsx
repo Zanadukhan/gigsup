@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import Content from './pages/main-page'
 import SignIn from './pages/sign-in'
 import SignUp from './pages/sign-up'
+import Result from './pages/result'
 
 const Home = () => {
   return (
@@ -37,11 +38,22 @@ const Login = () => {
   )
 }
 
+const Results = () => {
+  return (
+    <>
+    <Header />
+    <Result />
+    <Footer />
+    </>
+  )
+}
+
 const router = createBrowserRouter(createRoutesFromElements(
   <>
   <Route path="/" element={<Home />} />
   <Route path="/register" element={<Register />} />
   <Route path="/login" element={<Login />} />
+  <Route path="/result" element={<Results />} />
   </>
 ))
 
