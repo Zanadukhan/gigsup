@@ -7,6 +7,7 @@ import Content from './pages/main-page'
 import SignIn from './pages/sign-in'
 import SignUp from './pages/sign-up'
 import Result from './pages/result'
+import EditProfile from './pages/edit-profile'
 
 const Home = () => {
   return (
@@ -38,6 +39,16 @@ const Login = () => {
   )
 }
 
+const UserEdit = () => {
+  return (
+    <>
+    <Header />
+    <EditProfile />
+    <Footer />
+    </>
+  )
+}
+
 const Results = () => {
   return (
     <>
@@ -54,6 +65,7 @@ const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/register" element={<Register />} />
   <Route path="/login" element={<Login />} />
   <Route path="/result" element={<Results />} />
+  <Route path="/edit" element={<UserEdit />} />
   </>
 ))
 
